@@ -33,7 +33,7 @@ pipeline {
                     bat """
                     echo Logging in to Docker Hub...
                     echo %DOCKER_PASS% | docker login -u %DOCKER_USER% --password-stdin
-                    docker push %DOCKER_IMAGE%
+                    docker push rakeshbarwala/devops-task:latest
                     """
                 }
             }
