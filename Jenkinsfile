@@ -1,5 +1,3 @@
-
-
 pipeline {
     agent any
 
@@ -20,7 +18,7 @@ pipeline {
             steps {
                 bat '''
                 echo Building Docker image...
-                docker build -t %DOCKER_IMAGE% devops-task
+                docker build -t %DOCKER_IMAGE% -f Dockerfile devops-task
                 '''
                 
             }
