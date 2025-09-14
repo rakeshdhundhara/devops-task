@@ -27,7 +27,7 @@ pipeline {
         stage('Push to Docker Hub') {
             steps {
                 
-                withCredentials([usernamePassword(credentialsId: 'dockercredentialA',
+                withCredentials([string(credentialsId: 'dockercredentialA',
                                                 variable: 'DOCKER_PASS')]) {
                     bat """
                     echo Logging in to Docker Hub...
