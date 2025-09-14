@@ -1,17 +1,15 @@
-# Use lightweight Node.js Alpine image
-FROM node:18-alpine
 
-# Set working directory
+FROM node:18-alpine3.19
+
+
 WORKDIR /app
 
-# Copy package files (if you have dependencies)
-COPY package*.json ./
+COPY devops-task/package*.json ./
 
-# Install dependencies (skip if no package.json)
-RUN npm install 
 
-# Copy application files
-COPY . .
+RUN npm install
 
-# Command to run your script
+COPY devops-task/ .
+
+
 CMD ["node", "app.js"]

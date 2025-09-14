@@ -69,7 +69,7 @@ pipeline {
             steps {
                 bat '''
                 echo Building Docker image...
-                docker build -t rakeshbarwala/devops-task:latest .\\devops-task\\
+                docker build -t %DOCKER_IMAGE% devops-task
                 '''
                 
             }
