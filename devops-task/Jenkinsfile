@@ -9,7 +9,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/your-username/devops-task.git',
+                    url: 'https://github.com/rakeshdhundhara/devops-task.git',
                     credentialsId: 'github-token'
             }
         }
