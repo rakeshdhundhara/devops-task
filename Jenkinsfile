@@ -23,6 +23,12 @@ pipeline {
                 
             }
         }
+        stage('Check Docker') {
+            steps {
+                bat 'docker --version'
+                bat 'docker ps'
+            }
+        }
 
         stage('Push to Docker Hub') {
             steps {
@@ -32,7 +38,7 @@ pipeline {
                     bat """
                     echo Logging in to Docker Hub...
                     echo %DOCKER_PASS% | docker login -u rakeshbarwala --password-stdin
-                    docker push rakeshbarwala/devops-task:latest
+                    docker push  %DOCKER_IMAGE%:latest
                     """
                 }
             }
