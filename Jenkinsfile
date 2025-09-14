@@ -10,7 +10,7 @@ pipeline {
             steps {
                 git branch: 'main',
                     url: 'https://github.com/rakeshdhundhara/devops-task.git',
-                    credentialsId: 'github-token'
+                    credentialsId: 'github-tokenA'
             }
         }
 
