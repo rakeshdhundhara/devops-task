@@ -28,11 +28,10 @@ pipeline {
             steps {
                 
                 withCredentials([usernamePassword(credentialsId: 'dockercredentialA',
-                                                usernameVariable: 'DOCKER_USER',
                                                 passwordVariable: 'DOCKER_PASS')]) {
                     bat """
                     echo Logging in to Docker Hub...
-                    echo %DOCKER_PASS% | docker login -u %DOCKER_USER% --password-stdin
+                    echo %DOCKER_PASS% | docker login -u rakeshbarwala --password-stdin
                     docker push rakeshbarwala/devops-task:latest
                     """
                 }
